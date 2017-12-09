@@ -1,0 +1,135 @@
+/******************************************************************
+
+Stylesheet: Desktop Stylsheet
+
+******************************************************************/
+html {
+    font-size:22px;
+}
+
+.show1030 {
+    display:block !important;
+}
+
+.hide1030 {
+    display:none !important;
+}
+
+.header {
+	.sixcol.last {
+
+        h2 {
+            font-size:2.5em;
+        }
+    }
+}
+
+ul.hostingPlatforms li {
+
+    &.instruction {
+        display:flex;
+        width:250px;
+        height:80px;
+        span {
+            font-size:18px;
+        }
+    }
+
+    a {
+    	margin:3px;
+    	width:60px;
+    	height:60px;
+    	line-height:60px;
+
+        &#email {
+            width:80px;
+        }
+    }
+}
+
+.single.category-podcasts .podcastEpisodeLinks {
+	padding:.5em;
+
+	ul.hostingPlatforms {
+		margin:0 auto .7em;
+		li {
+			a {
+				width:39px;
+				height:39px;
+				margin:1px;
+			}
+		}
+	}
+}
+
+#mainNav {
+	display:none;
+}
+
+#hereticNavHome{
+	.hereticNav {
+		li a{
+			font-size:1.8rem;
+
+			span {
+				font-size:.9rem;
+			}
+
+			.icon {
+				width:60px;
+				height:60px;
+			}
+		}
+	}
+}
+
+#childPageContainer {
+	margin:1% 2%;
+	text-align:center;
+
+    .flexcontainer {
+
+        .childPage {
+            padding:4% 3%;
+        }
+    }
+
+	&.count4, &.count8, &.count10{
+		.childPage {
+			width:23%;
+		}
+	}
+}
+
+
+.showcase {
+	margin:8% auto;
+
+	.showcaseSection {
+
+		.showcaseImage {
+			padding:0 3% 0;
+			margin-top:-3%;
+		}
+		.showcaseContent {
+			padding:6% 4%;
+        }
+    }
+}
+
+.pageFooter {
+	display:flex;
+	justify-content: center;
+	flex-wrap:wrap;
+	margin:4% auto;
+	padding:0 3%;
+
+	section.relatedResources, section.morePages, .sidebar{
+		max-width:50%;
+	}
+
+	h3 {
+		margin:0 auto .7em;
+		text-align:center;
+	}
+}

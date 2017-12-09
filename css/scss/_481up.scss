@@ -1,0 +1,183 @@
+/******************************************************************
+
+Stylesheet: 481px and Up Stylesheet
+
+******************************************************************/
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+.nav {}
+
+	/* .menu is clearfixed inside mixins.scss */
+	.menu {
+		ul {
+			li {
+				a {
+
+					/*
+					you can use hover styles here even though this size
+					has the possibility of being a mobile device.
+					*/
+					&:hover, &:focus {
+
+					}
+				}
+
+				&:first-child {}
+				&:last-child {}
+
+				/*
+				plan your menus and drop-downs wisely.
+				*/
+				ul.sub-menu,
+				ul.children {
+					li {
+						a {
+							&:hover,
+							&:focus {}
+							&:link {}
+						}
+						&:first-child {}
+						&:last-child {}
+					}
+				}
+			} /* end .menu ul li */
+
+			/* highlight current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current-page-ancestor {
+				a {}
+			}  /* end current highlighters */
+		} /* end .menu ul */
+	} /* end .menu */
+
+#primaryNavContainer {
+
+	nav#primaryNav {
+
+		ul {
+
+			li {
+
+				a {
+				}
+			}
+		}
+	}
+
+}
+
+#childPageContainer {
+	margin:1% 2%;
+	text-align:center;
+
+	&.count2, &.count4, &.count6, &.count8, &.count10{
+		.childPage {
+			width:48%;
+		}
+	}
+
+	&.count3, &.count9, &.count15 {
+		.childPage {
+			width:98%;
+		}
+	}
+
+	.flexcontainer {
+		display:flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.childPage {
+			padding:6%;
+			margin:0 1% 2%;
+
+			article {
+				display:flex;
+				justify-content: center;
+
+				div {
+					align-self:center;
+
+				}
+			}
+		}
+	}
+}
+
+.pageFooter {
+	#childPageContainer {
+		margin:0 auto;
+		.wrap {
+			max-width:94%;
+		}
+	}
+}
+
+#hereticNavHome{
+	.hereticNav {
+		li a{
+			font-size:1.6rem;
+
+			span {
+				font-size:.8rem;
+			}
+
+			.icon {
+				width:50px;
+				height:50px;
+			}
+		}
+	}
+}
+
+#latestEpisodeContainer {
+	margin-bottom:-56px;
+	.actions {
+		a {
+			padding:12px;
+		}
+	}
+}
+
+.showcase {
+	.showcaseSection {
+		flex-direction: row;
+		flex-wrap:nowrap;
+		justify-content: center;
+
+		.showcaseImage {
+			max-width:50%;
+			text-align:right;
+			align-self:stretch;
+			padding-bottom:0;
+			display:flex;
+
+			img, & a{
+				align-self:flex-end;
+				-webkit-border-radius: 5px 5px 0 0;
+				border-radius: 5px 5px 0 0;
+			}
+
+		}
+
+		.showcaseContent {
+			padding:6%;
+			max-width:50%;
+		}
+		&:nth-of-type(even) {
+			.showcaseContent {
+				order:1;
+			}
+
+			.showcaseImage {
+				order:2;
+				text-align:left;
+			}
+		}
+	}
+}

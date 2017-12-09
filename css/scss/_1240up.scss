@@ -1,0 +1,81 @@
+/******************************************************************
+
+Stylesheet: Super Large Monitor Stylesheet
+
+******************************************************************/
+
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+/**********************
+HEADER STYLES
+**********************/
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.show1240 {
+	display:block;
+}
+
+.single .titleWrap .podcast {
+	margin-left:4%;
+	max-width:100%;
+}
+
+
+#hereticNavHome .hereticNav{
+	li a{
+		font-size:2rem;
+
+		span {
+			font-size:1rem;
+		}
+
+		.icon {
+			width:80px;
+			height:80px;
+			margin-right:7px;
+			margin-top:-.3rem;
+		}
+	}
+
+}
+
+.page {
+	.pageTitleWrap {
+		margin:0;
+
+		.hasExcerpt {
+			margin: 2.5rem auto;
+			width:720px;
+		}
+	}
+}
+
+#childPageContainer {
+	margin:1% 2%;
+	text-align:center;
+
+    .flexcontainer {
+
+        article.childPage {
+            padding:4% 3%;
+        }
+    }
+
+	&.count2, &.count4, &.count6, &.count8, &.count10{
+		article.childPage {
+			width:23%;
+		}
+	}
+
+	&.count3, &.count9, &.count15 {
+		article.childPage {
+			width:31.3333%;
+		}
+	}
+}

@@ -1,0 +1,306 @@
+/******************************************************************
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+html {
+	font-size:19px;
+	line-height:1.6;
+}
+
+.desktopHide {display:none !important;}
+
+.mobileHide {display:block !important;}
+
+.postDeets  {
+	span {
+		display:block;
+	}
+}
+
+.header {
+	.logo.sixcol {
+		padding-right:0;
+	}
+
+	.sixcol.last {
+		padding-left:0;
+		padding-top:8%;
+		h2{font-size:2em;}
+	}
+}
+
+#latestEpisodeContainer {
+	margin-bottom:-59px;
+
+	.prompt {
+		padding:25px;
+	}
+}
+
+.loop {
+	article.post.category-podcasts {
+		.readmore {
+			position:relative;
+			right:auto;
+			bottom:auto;
+		}
+	}
+}
+
+ul.hostingPlatforms {
+	line-height:1;
+	display:flex;
+	justify-content: center;
+
+	li.instruction {
+		display:flex;
+		width:250px;
+		height:60px;
+
+		span {
+			align-self:center;
+			width:auto;
+			height:auto;
+			font-size:16px;
+			line-height:1;
+			opacity:.7;
+			height:auto;
+		}
+	}
+}
+
+.single.category-podcasts {
+
+	.titleWrap h1 {
+		margin-bottom:.7em;
+	}
+
+	.podcastEpisodeLinks {
+		padding:.4em;
+
+		ul.hostingPlatforms {
+			margin:0;
+			li {
+				a {
+					width:28px;
+					height:28px;
+					margin:1px;
+				}
+			}
+		}
+	}
+}
+
+.hereticNav {
+	li a{
+		font-size:1.3rem;
+
+		span {
+			font-size:.65rem;
+			display:block;
+		}
+
+		.icon {
+			width:38px;
+			height:38px;
+			margin:0 .1rem 0 0;
+		}
+
+		&.mobileHide {
+			display:flex !important;
+		}
+	}
+}
+
+
+#homeSam {
+	margin:-100px 4% 4%;
+	float:right;
+	width:180px;
+	position:relative;
+	font-size:.7em;
+	line-height:1.2;
+
+	a {
+		color:#000;
+
+		&:hover {
+			color:$accent-color;
+		}
+	}
+
+	img {
+		margin:0 auto 5px;
+		width:80%;
+		display:block;
+	}
+	p {
+		background:rgba(0,0,0,.1);
+		margin:0 auto .7em;
+		padding:1em;
+		@include rounded(5px);
+	}
+
+	ul {
+		list-style:none;
+		margin:0;
+		padding:0;
+		li {
+			padding:0 1em .6em 1em;
+
+		}
+	}
+}
+
+/*********************
+PAGE STYLES
+*********************/
+.subtitle {
+	font-weight:300;
+}
+.page {
+	.pageTitleWrap {
+		margin:0;
+
+		.hasExcerpt {
+			margin:7% 12%;
+			text-align:left;
+
+			h1 {
+				margin:0;
+				text-align:left;
+			}
+		}
+
+		h1 {
+			margin:7%;
+			text-align:center;
+		}
+
+		.pageDetails {
+			display: flex;
+		    justify-content: space-between;
+			flex-direction: row;
+
+			#breadcrumbs, #latestEpisodeContainer {
+				display:flex;
+			}
+
+			#breadcrumbs {
+				line-height:59px;
+				margin:0 4%;
+			}
+
+			#latestEpisodeContainer {
+
+				margin:0 4% -100px 0;
+			}
+		}
+	}
+
+	main[role="main"] {
+		margin-top:75px;
+
+		.entry-content {
+			.section {
+				padding:3rem;
+			}
+		}
+	}
+}
+
+#childPageContainer {
+	margin:6%;
+
+	&.count3, &.count6, &.count9, &.count15 {
+		.childPage {
+			width:31.3333%;
+		}
+	}
+}
+
+/*********************
+SUBSCRIBE PAGE STYLES
+*********************/
+
+.subscribeLists {
+
+	a {
+		margin:.4rem;
+		border:5px solid #fff;
+		padding:.4rem;
+
+		span.icon {
+			margin:5px;
+			width:62px;
+			line-height:62px;
+			height:62px;
+			background-image:url('../img/hosting-platform-icons@2x.jpg');
+
+			&:active {
+				box-shadow:none;
+				opacity:.85;
+			}
+		}
+
+		span.title {
+			font-size:1.4em;
+			padding-right:.5rem;
+		}
+
+			&#email {
+				display:block;
+				padding:.7rem;
+				line-height:1;
+
+				.icon {
+					width:96px;
+					height:96px;
+					font-size:64px;
+					line-height:96px;
+				}
+
+				.title{
+					margin:5px;
+				}
+			}
+
+	}
+
+	&.socialLinks a span.icon {
+		background-image:url('../img/social-network-icons@2x.jpg');
+	}
+}
+
+/*********************
+GUEST INFO PAGE STYLES
+*********************/
+
+body.page-template-page-guest {
+
+	main[role="main"] {
+		margin-top:1.2em !important;
+		padding-right:4%;
+
+		h2{
+			padding-top:1.5em;
+		}
+	}
+}
+
+/*********************
+SIDEBAR STYLES
+*********************/
+
+#belowSingle {
+	#links {
+		margin-top:-12%;
+	}
+}

@@ -1,0 +1,140 @@
+/******************************************************************
+
+Stylesheet: Login Stylesheet
+
+******************************************************************/
+
+
+body.login {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size:17px;
+	font-size:17px;
+	line-height:1.4;
+	background:#67c2e7;
+}
+
+
+#login {
+	padding:3% 0 3%;
+	max-width:96%;
+
+	form {
+		padding: 26px 24px 26px;
+		font-weight: normal;
+		background:lighten(#67c2e7,25%);
+		border: none;
+		border-radius: 5px;
+		box-shadow: 0px 4px 4px rgba(0,0,0,.3) !important;
+		-moz-box-shadow: 0px 4px 4px rgba(0,0,0,.3) !important;
+		-webkit-box-shadow: 0px 4px 4px rgba(0,0,0,.3) !important;
+
+		input[type=text], input[type=password], input[type=email]{
+			border:3px solid transparent;
+			padding:.5rem;
+			line-height:1;
+			box-shadow:0px 2px 2px rgba(0,0,0,.5);
+			-moz-box-shadow:0px 2px 2px rgba(0,0,0,.5);
+			-webkit-box-shadow:0px 2px 2px rgba(0,0,0,.5);
+			border-radius:3px;
+
+			&:hover, &:active{
+				border-color:#f3f600;
+			}
+
+			&:focus {
+				background-color:#f3f600;
+			}
+		}
+
+		input[type=checkbox]{
+			border-radius:2px;
+			border:3px solid transparent;
+			width:20px;
+			height:20px;
+			box-shadow:0px 2px 2px rgba(0,0,0,.5);
+			-moz-box-shadow:0px 2px 2px rgba(0,0,0,.5);
+			-webkit-box-shadow:0px 2px 2px rgba(0,0,0,.5);
+
+			&:hover, &:active{
+				border-color:#f3f600;
+			}
+
+			&:focus {
+				background-color:#f3f600;
+			}
+
+			&:checked:before {
+				content: "\f147";
+			    margin: -3px 0 0 -4px;
+			    color: #67c2e7;
+				font-size:22px;
+			}
+		}
+
+		label {
+			color:rgba(0,0,0,.9);
+			font-weight:700;
+		}
+
+		p.forgetmenot {
+			margin-bottom:16px;
+		}
+
+		#wp-submit {
+			box-shadow:inset 0px -2px 0px rgba(0,0,0,.5);
+			border:none;
+			padding: .7em 1.2em;
+			display: inline-block;
+			font-size: 18px;
+			height:auto;
+			width:100%;
+			text-shadow:none;
+			color:rgba(0,0,0,.7);
+			background:#67c2e7;
+			line-height:1;
+			font-weight: bold;
+			text-transform:uppercase;
+			text-decoration: none;
+			cursor: pointer;
+
+			&:hover, &:focus {
+				background:lighten(#67c2e7,10%);
+		        color:rgba(0,0,0,.7);
+			}
+
+			&:active {
+				background:darken(#67c2e7,15%);
+				color:rgba(0,0,0,.5);
+		        -webkit-box-shadow:inset 0 1px 1px 0 rgba(0,0,0,.5);
+		        box-shadow:inset 0 1px 1px 0 rgba(0,0,0,.5);
+			}
+
+		    &.button-wide {
+		        width:100%;
+		        text-align:center;
+		    }
+		} /* login button*/
+	}
+
+	p.message {
+		background:#f3f600;
+		border:none;
+		border-radius:5px;
+	}
+} /* the form box */
+
+/*
+This is the Wordpress logo in the admin area.
+You'll have to load your own images and mess
+with the width and height.
+*/
+.login h1 a {
+	background: url('../img/heretic-logo-animated-600.gif') no-repeat top center; /* make sure to replace this! */
+	width: 320px;
+	height: 162px;
+	background-size:contain;
+	text-indent: -9999px;
+	overflow: hidden;
+	padding-bottom: 15px;
+	display: block;
+}

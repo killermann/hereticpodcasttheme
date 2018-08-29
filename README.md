@@ -2,7 +2,7 @@
 
 A full-featured, open-source podcast theme built on [html5blank.com](http://html5blank.com) with [ACF](https://www.advancedcustomfields.com/).
 
-##Features
+## Features
 
 ### Podcast Embeds
 * Embed podcast episodes from all the major players

@@ -17,7 +17,7 @@ get_header(); ?>
 
 	<main id="all" role="main">
 		<div id="blogAbout" role="sidebar" class="wrap">
-			<h3 style="display:block; background-image:url('<?php echo get_template_directory_uri(); ?>/img/heading-huh.png'); width:100px; height:56px;" class="image-replacement">Huh? What is Heretic?</h3>
+			<h3 style="display:block; background-image:url('<?php echo get_template_directory_uri(); ?>/img/heading-huh.svg'); width:100px; height:56px;" class="image-replacement">Huh? What is Heretic?</h3>
 			<p>Heretic is a podcast about the social justice movement and the unwritten rules that underpin (and may undermine) it. With guest activists, authors, and artists who have who have been pushed to the fringes by the movement, spent their lives fighting for social justice, or fighting against it, it’s a light conversation about the darkness in society.</p>
 			<?php echo getHereticNav();?>
 		</div>

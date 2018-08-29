@@ -29,7 +29,7 @@ Template Name: Home
 	<main role="main">
 		<!-- section -->
 		<section id="homeHuh" class="wrap">
-            <h3 style="display:block; background-image:url('<?php echo get_template_directory_uri(); ?>/img/heading-huh.png'); width:100px; height:56px;" class="image-replacement">Huh? What is Heretic?</h3>
+            <h3 style="display:block; background-image:url('<?php echo get_template_directory_uri(); ?>/img/heading-huh.svg'); width:100px; height:56px;" class="image-replacement">Huh? What is Heretic?</h3>
 
     		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 

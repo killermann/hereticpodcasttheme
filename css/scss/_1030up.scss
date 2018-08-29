@@ -47,8 +47,8 @@ ul.hostingPlatforms li {
     }
 }
 
-.single.category-podcasts .podcastEpisodeLinks {
-	padding:.5em;
+.single.category-episodes .podcastEpisodeLinks {
+	padding:0 .5em .5em;
 
 	ul.hostingPlatforms {
 		margin:0 auto .7em;
@@ -131,5 +131,59 @@ ul.hostingPlatforms li {
 	h3 {
 		margin:0 auto .7em;
 		text-align:center;
+	}
+}
+
+/**********************
+ALL PAGE
+**********************/
+
+#all {
+	display:flex;
+
+	div[role="sidebar"] {
+		width:280px;
+        padding:0 20px;
+        display:block;
+
+
+
+        h3 {
+            margin-top:0;
+        }
+
+        p {
+            line-height:1.2;
+        }
+
+        &#blogAbout {
+            ul.hereticNav {
+                margin:0;
+                padding:0;
+                flex-direction:column;
+            }
+        }
+
+        &#blogHost {
+            margin-top:-120px;
+
+            ul {
+                line-height:1.2;
+                list-style: none;
+                padding:0;
+
+                li {
+                    margin-bottom:7px;
+                }
+            }
+
+            a {
+                color:#000;
+
+                &:hover {
+                    color:$accent-color;
+                }
+            }
+        }
 	}
 }

@@ -7,7 +7,6 @@
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 			<div class="titleWrap">
 				<!-- post title -->
-
 				<h1>
 					<?php if(get_field('episode_number')) {
 						echo '<span style="font-size:.666em" class="epNumber">';
@@ -18,10 +17,14 @@
 					?>
 					<?php the_title(); ?>
 				</h1>
+				<?php if (in_category('codex')) {?>
+				<h2 class="subtitle">An entry from the <a href="https://hereticpodcast.com/codex/" title="The Heretic Codex of Social Justice Dogma">Codex</a> of Social Justice Dogma</h2>
+				<?php }?>
+
 				<!-- /post title -->
 
 				<div class="podcastEpisodeLinks flexcontainer last">
-					<h4>Stream this episode on</h4>
+					<h4>View this episode on</h4>
 					<!-- podcast links -->
 					<ul class="hostingPlatforms">
 						<?php if(get_field('itunes_link')) {
@@ -99,7 +102,6 @@
 
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 				<!-- post details -->
 				<div class="postDeets fourcol last">
 					<?php if(get_field('podcast')) { ?>
@@ -116,18 +118,8 @@
 				</div>
 				<!-- /post details -->
 
-
-				<div class="">
-					<div class="entry-content">
-						<?php the_content(); // Dynamic Content ?>
-					</div>
-
-					<!-- <?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
-
-					<p><?php _e( 'Filed in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
-
-					<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p> -->
-
+				<div class="entry-content">
+					<?php the_content(); // Dynamic Content ?>
 				</div>
 
 			</article>

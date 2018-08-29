@@ -33,6 +33,18 @@ function loopDefault() {?>
 				</div>
 			<?php }
 
+			elseif (in_category('codex')) {?>
+				<h4>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<?php the_title(); ?>
+					</a>
+				</h4>
+				<div class="codex--banner"><em>From the <a href="https://hereticpodcast.com/codex/" title="The Heretic Codex of Social Justice Dogma">Codex</a> of Social Justice Dogma</em></div>
+
+				<?php the_content() ?>
+
+			<?php }
+
 			else {?>
 				<h4>
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">

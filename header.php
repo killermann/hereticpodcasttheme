@@ -67,7 +67,19 @@
 
 			</div><!--Cleafix-->
 
+		<?php }
 
+		elseif ( is_home() ) {?>
+			<div class="blogHeader">
+				<a href="<?php echo home_url(); ?>">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/heretic-logo-animated-600.gif" alt="Logo" class="logo-img">
+				</a>
+				<h2 class="tagline"><?php echo get_bloginfo('description');?></h2>
+
+				<nav id="mainNav" class="nav" role="navigation">
+					<?php html5blank_nav(); ?>
+				</nav>
+			</div>
 
 		<?php }
 
@@ -168,13 +180,17 @@
 					<?php html5blank_nav(); ?>
 				</nav>
 			</div>
-			<div class="pageTitleWrap flexcontainer">
-				<?php if (is_category()) { ?><h1><?php single_cat_title(); ?></h1>
-				<?php } elseif (is_tag()) { ?><h1><?php single_tag_title(); ?></h1>
-				<?php } elseif (is_day()) { ?><h1><?php the_time('l, F j, Y'); ?></h1>
-				<?php } elseif (is_month()) { ?><h1><?php the_time('F Y'); ?></h1>
-				<?php } elseif (is_year()) { ?><h1><?php the_time('Y'); ?></h1><?php }?>
-			</div><!--/page-title-->
+
+			<div class="flexcontainer">
+				<div class="pageTitleWrap wrap">
+					<?php if (is_category()) { ?><h1><?php single_cat_title(); ?></h1>
+					<?php } elseif (is_tag()) { ?><h1><?php single_tag_title(); ?></h1>
+					<?php } elseif (is_day()) { ?><h1><?php the_time('l, F j, Y'); ?></h1>
+					<?php } elseif (is_month()) { ?><h1><?php the_time('F Y'); ?></h1>
+					<?php } elseif (is_year()) { ?><h1><?php the_time('Y'); ?></h1><?php }?>
+					<?php echo category_description(); ?>
+				</div><!--/titlewrap-->
+			</div><!--/flex-->
 		<?php }
 		else { ?>
 

@@ -1,6 +1,5 @@
 <?php /* Template Name: Guest Info Page */ get_header(); ?>
 
-
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js" integrity="sha256-C6CB9UYIS9UJeqinPHWTHVqh/E1uhG5Twh+Y5qFQmYg=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/toc.min.js"></script>

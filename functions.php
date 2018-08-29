@@ -52,6 +52,24 @@ function getHostingPlatformsListItems() {
 		echo '" alt="Listen to Podcast on Spotify">Spotify</a></li>';
 		};
 	?>
+	<?php if(get_field('overcast_link', 'option')) {
+		echo '<li><a target="_blank" data-ot="Overcast" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="overcast" href="';
+		echo the_field('overcast_link', 'option');
+		echo '" alt="Listen to Podcast on Overcast">Overcast</a></li>';
+		};
+	?>
+	<?php if(get_field('anchor_link', 'option')) {
+		echo '<li><a target="_blank" data-ot="Anchor" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="anchor" href="';
+		echo the_field('anchor_link', 'option');
+		echo '" alt="Listen to Podcast on Anchor">Anchor</a></li>';
+		};
+	?>
+	<?php if(get_field('pocketcasts_link', 'option')) {
+		echo '<li><a target="_blank" data-ot="Pocket Casts" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="pocketcasts" href="';
+		echo the_field('pocketcasts_link', 'option');
+		echo '" alt="Listen to Podcast on Pocket Casts">Pocket Casts</a></li>';
+		};
+	?>
 	<?php if(get_field('soundcloud_link', 'option')) {
 		echo '<li><a target="_blank" data-ot="Soundcloud" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="soundcloud" href="';
 		echo the_field('soundcloud_link', 'option');
@@ -68,6 +86,12 @@ function getHostingPlatformsListItems() {
 		echo '<li><a target="_blank" data-ot="TuneIn" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="tunein" href="';
 		echo the_field('tunein_link', 'option');
 		echo '" alt="Listen to Podcast on TuneIn">TuneIn</a></li>';
+		};
+	?>
+	<?php if(get_field('google_podcasts_link', 'option')) {
+		echo '<li><a target="_blank" data-ot="Google Podcasts" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="googlepodcasts" href="';
+		echo the_field('google_podcasts_link', 'option');
+		echo '" alt="Listen to Podcast on Google Podcasts">Google Podcasts</a></li>';
 		};
 	?>
 	<?php if(get_field('google_play_link', 'option')) {
@@ -90,7 +114,7 @@ function getLatestEpisode() { ?>
 				array(
 					'taxonomy' => 'category',
 					'field' => 'slug',
-					'terms' => 'podcasts' // this gets the page slug
+					'terms' => 'episodes' // this gets the page slug
 				)
 			)
 		));?>
@@ -539,6 +563,70 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 		),
 		array (
+			'key' => 'field_59ee1bd44e9dc',
+			'label' => 'Google Podcasts Link',
+			'name' => 'google_podcasts_link',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array (
+			'key' => 'field_52ee1bd40e9dc',
+			'label' => 'Anchor Link',
+			'name' => 'anchor_link',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array (
+			'key' => 'field_69ee1bd99e9dc',
+			'label' => 'Overcast Link',
+			'name' => 'overcast_link',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array (
+			'key' => 'field_69ee3bd18e9dc',
+			'label' => 'Pocket Casts Link',
+			'name' => 'pocketcasts_link',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array (
 			'key' => 'field_59ee0bf24e9dd',
 			'label' => 'iTunes Link',
 			'name' => 'itunes_link',
@@ -631,7 +719,7 @@ acf_add_local_field_group(array (
 			array (
 				'param' => 'post_category',
 				'operator' => '==',
-				'value' => 'category:podcasts',
+				'value' => 'category:episodes',
 			),
 		),
 	),
@@ -809,7 +897,7 @@ acf_add_local_field_group(array (
 			array (
 				'param' => 'post_category',
 				'operator' => '==',
-				'value' => 'category:podcasts',
+				'value' => 'category:episodes',
 			),
 		),
 	),
@@ -1838,7 +1926,7 @@ function my_customize_menu_pages() {
 					<label for="sop2"><input id="sop2" type="checkbox"> Podcast embed (from Soundcloud)</label>
 				</li>
 				<li>
-					<label for="sop3"><input id="sop3" type="checkbox"> Select "Podcasts" Category</label>
+					<label for="sop3"><input id="sop3" type="checkbox"> Select "Episodes" Category</label>
 				</li>
 				<li>
 					<label for="sop4"><input id="sop4" type="checkbox"> Add episode number (following numbering convention)</label>

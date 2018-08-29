@@ -67,6 +67,24 @@ Template Name: Subscribe
         		echo '" alt="Subscribe to Podcast on Spotify"><span class="icon">Spotify</span> <span class="title">Spotify</span></a></li>';
         		};
         	?>
+            <?php if(get_field('overcast_link', 'option')) {
+        		echo '<li><a id="overcast" href="';
+        		echo the_field('overcast_link', 'option');
+        		echo '" alt="Subscribe to Podcast on Overcast"><span class="icon">Overcast</span> <span class="title">Overcast</span></a></li>';
+        		};
+        	?>
+            <?php if(get_field('anchor_link', 'option')) {
+        		echo '<li><a id="anchor" href="';
+        		echo the_field('anchor_link', 'option');
+        		echo '" alt="Subscribe to Podcast on Anchor"><span class="icon">Anchor</span> <span class="title">Anchor</span></a></li>';
+        		};
+        	?>
+            <?php if(get_field('pocketcasts_link', 'option')) {
+        		echo '<li><a id="pocketcasts" href="';
+        		echo the_field('pocketcasts_link', 'option');
+        		echo '" alt="Subscribe to Podcast on Pocket Casts"><span class="icon">Pocket Casts</span> <span class="title">Pocket Casts</span></a></li>';
+        		};
+        	?>
             <?php if(get_field('soundcloud_link', 'option')) {
         		echo '<li><a id="soundcloud" href="';
         		echo the_field('soundcloud_link', 'option');
@@ -83,6 +101,12 @@ Template Name: Subscribe
         		echo '<li><a id="tunein" href="';
         		echo the_field('tunein_link', 'option');
         		echo '" alt="Subscribe to Podcast on TuneIn"><span class="icon">TuneIn</span> <span class="title">TuneIn</span></a></li>';
+        		};
+        	?>
+            <?php if(get_field('google_podcasts_link', 'option')) {
+        		echo '<li><a id="googlepodcasts" href="';
+        		echo the_field('google_podcasts_link', 'option');
+        		echo '" alt="Subscribe to Podcast on Google Podcasts"><span class="icon">Google Podcasts</span> <span class="title">Google Podcasts</span></a></li>';
         		};
         	?>
             <?php if(get_field('google_play_link', 'option')) {

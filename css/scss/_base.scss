@@ -90,7 +90,8 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $link-color;
+	color: $text-color;
+	text-decoration-color:$blue;
 
 	/* on hover */
 	&:hover, &:focus {
@@ -160,6 +161,7 @@ ul.hostingPlatforms {
 	text-align:center;
 	margin:.5em auto 30px;
 	padding:0;
+	flex-wrap:wrap;
 
 	li {
 		display:inline-block;
@@ -186,7 +188,6 @@ ul.hostingPlatforms {
 			margin:3px;
 			background-size:cover;
 			background-repeat: no-repeat;
-			background-image:url('../img/hosting-platform-icons.jpg');
 			background-color:#fff;
 			width:40px;
 			line-height:40px;
@@ -218,24 +219,16 @@ ul.hostingPlatforms {
 				}
 			}
 
-			&#soundcloud {
-				background-position:0 0%;
-			}
-			&#itunes {
-				background-position:0 20%;
-			}
-			&#stitcher {
-				background-position:0 40%;
-			}
-			&#spotify {
-				background-position:0 60%;
-			}
-			&#tunein {
-				background-position:0 80%;
-			}
-			&#googleplay {
-				background-position:0 100%;
-			}
+			&#soundcloud {background-image:url('../img/icon-soundcloud.png');}
+			&#pocketcasts {background-image:url('../img/icon-pocketcasts.png');}
+			&#overcast {background-image:url('../img/icon-overcast.png');}
+			&#anchor {background-image:url('../img/icon-anchor.png');}
+			&#itunes {background-image:url('../img/icon-itunes.png');}
+			&#stitcher {background-image:url('../img/icon-stitcher.png');}
+			&#spotify {background-image:url('../img/icon-spotify.png');}
+			&#tunein {background-image:url('../img/icon-tunein.png');}
+			&#googlepodcasts {background-image:url('../img/icon-google.png');}
+			&#googleplay {background-image:url('../img/icon-googleplay.png');}
 		}
 	}
 }
@@ -248,7 +241,7 @@ ul.hostingPlatforms {
 		display:none;
 	}
 
-	.category-podcasts .podcastEpisodeLinks {
+	.category-episodes .podcastEpisodeLinks {
 		display:block;
 		margin:0em auto 1em;
 		text-align:center;
@@ -660,6 +653,7 @@ POSTS & CONTENT STYLES
 		h4 {
 			margin:0 auto 3%;
 			font-weight:900;
+			line-height:1.2;
 
 			a {
 				color:$text-color;
@@ -671,12 +665,21 @@ POSTS & CONTENT STYLES
 		}
 	}
 
-	article.post.category-podcasts {
+	article.post.category-codex {
+		h4 a:before {
+			content:'CODEX: ';
+			font-weight:100;
+			display:inline;
+		}
+	}
+
+	article.post.category-episodes {
 		position:relative;
 
 		.flexcontainer {
 			margin-bottom:3%;
 		}
+
 		h4 {
 			padding-right:3%;
 			margin:0;
@@ -738,6 +741,26 @@ POSTS & CONTENT STYLES
 		padding:3%;
 		margin:0 0 2rem;
 		text-align:center;
+		position:relative;
+
+		// &:before, &:after {
+		// 	content:'';
+		// 	position:absolute;
+		// 	top:0;
+		// 	left:0;
+		// 	background-position:top left;
+		// 	width:100%;
+		// 	height:100%;
+		// 	background-image:url(../img/border-diag-blue-top.svg);
+		// 	background-size:100% auto;
+		// 	background-repeat:no-repeat;
+		// 	overflow:visible;
+		// }
+		//
+		// &:after {
+		// 	background-image:url(../img/border-diag-blue-bottom.svg);
+		// 	background-position:bottom right;
+		// }
 
 		h2, h3 {
 			margin-top:0;
@@ -779,6 +802,23 @@ POSTS & CONTENT STYLES
 				background:#fff;
 			}
 		}
+	}
+}
+
+.codex--banner {
+	font-family:$serif;
+	text-align:center;
+	line-height:1;
+	border-radius:4px;
+	background-color:white;
+	background-image: radial-gradient($blue 15%, transparent 16%),
+	radial-gradient($blue 15%, transparent 16%);
+	background-size:10px 10px;
+	background-position: 0 0, 10px 10px;
+
+	em {
+		background:white;
+		padding:0 .5em;
 	}
 }
 
@@ -1013,7 +1053,7 @@ ARTICLE STYLES
 		}
 	}
 
-	&.category-podcasts .titleWrap h1 {
+	&.category-episodes .titleWrap h1 {
 		margin-bottom:.3em;
 	}
 
@@ -1044,6 +1084,24 @@ ARTICLE STYLES
 			}
 		}
 	}
+
+	&.category-codex {
+		.titleWrap {
+			margin-bottom:3%;
+			a {
+				border-radius:4px;
+				padding:0 .2em;
+				background-color:$accent-color;
+			}
+		}
+		main article.post {
+			padding:0 0 6%;
+		}
+
+		.entry-content {
+			padding-top:1.5%;
+		}
+	}
 }
 
 ul.emojiList, .entry-content ul.emojiList {
@@ -1057,6 +1115,13 @@ ul.emojiList, .entry-content ul.emojiList {
 		font-size:1.7em;
 		margin-left:-1.7em !important;
 	}
+}
+
+
+@media only screen and (min-width: 993px) { /* For Anchor Embeds */
+    .single .titleWrap .podcast {
+        padding-bottom: 160px;
+    }
 }
 
 /********************************************
@@ -1443,7 +1508,6 @@ SUBSCRIBE PAGE
 			margin:3px;
 			background-size:cover;
 			background-repeat: no-repeat;
-			background-image:url('../img/hosting-platform-icons.jpg');
 			width:40px;
 			line-height:40px;
 			height:40px;
@@ -1482,24 +1546,16 @@ SUBSCRIBE PAGE
 				}
 			}
 
-			&#soundcloud .icon {
-				background-position:0 0%;
-			}
-			&#itunes .icon {
-				background-position:0 20%;
-			}
-			&#stitcher .icon {
-				background-position:0 40%;
-			}
-			&#spotify .icon {
-				background-position:0 60%;
-			}
-			&#tunein .icon {
-				background-position:0 80%;
-			}
-			&#googleplay .icon {
-				background-position:0 100%;
-			}
+			&#soundcloud .icon {background-image:url('../img/icon-soundcloud.png');}
+			&#pocketcasts .icon {background-image:url('../img/icon-pocketcasts.png');}
+			&#overcast .icon {background-image:url('../img/icon-overcast.png');}
+			&#anchor .icon {background-image:url('../img/icon-anchor.png');}
+			&#itunes .icon {background-image:url('../img/icon-itunes.png');}
+			&#stitcher .icon {background-image:url('../img/icon-stitcher.png');}
+			&#spotify .icon {background-image:url('../img/icon-spotify.png');}
+			&#tunein .icon {background-image:url('../img/icon-tunein.png');}
+			&#googlepodcasts .icon {background-image:url('../img/icon-google.png');}
+			&#googleplay .icon {background-image:url('../img/icon-googleplay.png');}
 
 		.title {
 			font-size:1.2em;
@@ -1595,7 +1651,6 @@ TEAM PAGE
 		-webkit-transform: rotate(-1deg);
 	}
 }
-
 
 /**********************
 GUEST INFO PAGE
@@ -1709,6 +1764,32 @@ body.page-template-page-guest {
 	}
 }
 
+
+/**********************
+ALL PAGE
+**********************/
+
+.blogHeader {
+	text-align:center;
+
+	h2 {
+		opacity:.7;
+		font-weight:900;
+		line-height:1;
+		margin:0 auto 2rem;
+	}
+}
+#all {
+	display:flex;
+
+	.post-filters {
+		margin-bottom:2rem;
+	}
+
+	div[role="sidebar"] {
+		display:none;
+	}
+}
 
 /**********************
 RESOURCES PAGE

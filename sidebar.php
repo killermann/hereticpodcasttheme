@@ -7,7 +7,7 @@
 		query_posts(array(
 			'showposts' => 3,
 			'post_type' => 'post',
-			'category_name' => 'podcasts',
+			'category_name' => 'episodes',
 			'orderby' => 'published',
 			'order' => 'DESC')
 		);

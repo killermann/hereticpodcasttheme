@@ -99,7 +99,7 @@ BOX SHADOW
 
 .podcast {
 	position: relative;
-	padding-bottom: 165px;
+	padding-bottom: 100px;
 	height: 0;
     background:#ccc;
     overflow:hidden;
@@ -114,7 +114,7 @@ BOX SHADOW
 	}
 
     &:before {
-        content:'Soundcloud Plug-in Loading...';
+        content:'Podcast Embed Loading...';
         display:block;
         position:absolute;
         top:50%;

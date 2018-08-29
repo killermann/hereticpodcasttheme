@@ -45,7 +45,7 @@ html {
 }
 
 .loop {
-	article.post.category-podcasts {
+	article.post.category-episodes {
 		.readmore {
 			position:relative;
 			right:auto;
@@ -76,7 +76,7 @@ ul.hostingPlatforms {
 	}
 }
 
-.single.category-podcasts {
+.single.category-episodes {
 
 	.titleWrap h1 {
 		margin-bottom:.7em;
@@ -119,9 +119,8 @@ ul.hostingPlatforms {
 	}
 }
 
-
 #homeSam {
-	margin:-100px 4% 4%;
+	margin:-60px 4% 4%;
 	float:right;
 	width:180px;
 	position:relative;
@@ -130,6 +129,7 @@ ul.hostingPlatforms {
 
 	a {
 		color:#000;
+		text-decoration-color:black;
 
 		&:hover {
 			color:$accent-color;

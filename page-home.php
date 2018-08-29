@@ -79,28 +79,34 @@ Template Name: Home
 
         while (have_posts()) : the_post();
 
-    		$count++;
 
-    		if ($count == 2) :
+    		if ($count == 1) :
 
                 getLoopSubscribe();
 
-            elseif ($count == 6) :?>
+            endif;
 
-                </div><!--/wrap-->
-                <div class="loop light-blue-bg">
-                    <div class="wrap">
-    			             <?php getMailingList();?>
-                    </div>
+            if ($count == 6) :?>
+
+            </div><!--/wrap-->
+            <div class="loop light-blue-bg">
+                <div class="wrap">
+                    <?php getMailingList();?>
                 </div>
-                <div class="wrap loop">
+            </div>
+            <div class="wrap loop">
 
-    	  	<?php else :
+    	  	<?php
+
+            else :
+
     	          loopDefault();
+
     	 	endif;
 
-        endwhile; else: endif; ?>
+            $count++;
 
+        endwhile; else: endif; ?>
 
 	</div>
 

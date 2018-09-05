@@ -14,13 +14,18 @@ Template Name: Home
         </p>
         <ul>
             <li>
-                <a href="https://hereticpodcast.com/about/about-the-host/" alt="Read Sam's Story">
+                <a href="https://hereticpodcast.com/about/about-the-host/" title="Read Sam's Story">
                     Read why I’m a social justice heretic.
                 </a>
             </li>
             <li>
-                <a target="_blank" href="http://m.me/hereticpodcast" alt="Write a Facebook Message to Heretic">
+                <a target="_blank" href="http://m.me/hereticpodcast" title="Write a Facebook Message to Heretic">
                     Message me.
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://hereticpodcast.com/guest-submissions-voting/" title="Nominate or Vote on a Guest for the Podcast">
+                    Nominate a guest.
                 </a>
             </li>
         </ul>

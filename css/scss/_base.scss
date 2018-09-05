@@ -195,7 +195,7 @@ ul.hostingPlatforms {
 			border-radius:23.3333%;
 			@include shadow-low;
 
-			&:hover {
+			&:hover, &:focus {
 				opacity:1;
 				@include shadow-high;
 				-moz-transform: translateX(0px) translateY(-1px);
@@ -219,16 +219,16 @@ ul.hostingPlatforms {
 				}
 			}
 
-			&#soundcloud {background-image:url('../img/icon-soundcloud.png');}
-			&#pocketcasts {background-image:url('../img/icon-pocketcasts.png');}
-			&#overcast {background-image:url('../img/icon-overcast.png');}
-			&#anchor {background-image:url('../img/icon-anchor.png');}
-			&#itunes {background-image:url('../img/icon-itunes.png');}
-			&#stitcher {background-image:url('../img/icon-stitcher.png');}
-			&#spotify {background-image:url('../img/icon-spotify.png');}
-			&#tunein {background-image:url('../img/icon-tunein.png');}
-			&#googlepodcasts {background-image:url('../img/icon-google.png');}
-			&#googleplay {background-image:url('../img/icon-googleplay.png');}
+			&#soundcloud {background-image:url('../img/icon-soundcloud.png'); background-color:#ff5600;}
+			&#pocketcasts {background-image:url('../img/icon-pocketcasts.png'); background-color:#ff442e;}
+			&#overcast {background-image:url('../img/icon-overcast.png'); background-color:#ff8a21;}
+			&#anchor {background-image:url('../img/icon-anchor.png'); background-color:#8f36ff;}
+			&#itunes {background-image:url('../img/icon-itunes.png'); background-color:#a840dd;}
+			&#stitcher {background-image:url('../img/icon-stitcher.png'); background-color:#fff;}
+			&#spotify {background-image:url('../img/icon-spotify.png'); background-color:#00d95a;}
+			&#tunein {background-image:url('../img/icon-tunein.png'); background-color:#00d9cd;}
+			&#googlepodcasts {background-image:url('../img/icon-google.png'); background-color:#f8b82c;}
+			&#googleplay {background-image:url('../img/icon-googleplay.png'); background-color:#f85725;}
 		}
 	}
 }
@@ -279,6 +279,11 @@ ul.hostingPlatforms {
 		color:#000;
 		text-decoration:none;
 
+		span {
+			padding-bottom:.5em;
+			display:inline-block;
+		}
+
 		&:hover {
 			opacity:.8;
 		}
@@ -292,7 +297,7 @@ ul.hostingPlatforms {
 		align-self:center;
 
 		div {
-			margin:5px 0 0;
+			padding:5px 0 0;
 		}
 	}
 
@@ -323,7 +328,7 @@ ul.hostingPlatforms {
 
 			&.primary {
 				background:$accent-color;
-				@extend .shadow-hard;
+				// @extend .shadow-hard;
 
 				&:hover {background:lighten($accent-color,5%); img {opacity:1}}
 			}
@@ -711,18 +716,17 @@ POSTS & CONTENT STYLES
 			text-decoration:none;
 			color:#000 !important;
 			overflow:hidden;
+			line-height:1.2;
 
 			h4 {
 				font-size:1rem;
 				margin:0 0 .1em;
 				font-weight:900;
 				display:inline;
-				line-height:1.4;
 			}
 
 			p {
 				font-size:1rem;
-				line-height:1.4;
 				display:inline;
 				margin:0;
 			}
@@ -1567,7 +1571,7 @@ SUBSCRIBE PAGE
 			align-self:center;
 		}
 
-		&:hover {
+		&:hover, &:focus {
 			@include shadow-high;
 			border-color:$accent-color;
 			-moz-transform: translateX(0px) translateY(-1px);

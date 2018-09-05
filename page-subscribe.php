@@ -48,7 +48,7 @@ Template Name: Subscribe
                     Heretic Emails
                 </span>
                 <span class="blurb">
-                    Get an email when we drop new episodes (and only then!). We'll also include links to articles, community stuff, and other things we think you'll love. But never ads, never corporate "sponsored content," and never spam.
+                    Get an email when we drop new episodes. We'll also include links to articles, community stuff, and other things we think you'll love. But never ads, never third-party "sponsored content," and never spam.
                 </span>
             </a>
         </div>

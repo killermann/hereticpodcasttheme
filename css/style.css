@@ -406,7 +406,7 @@ BOX SHADOW
   -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3); }
 
-.shadow-hard, .button, .button:visited, #latestEpisodeContainer .actions a.primary, .post-filters select {
+.shadow-hard, .button, .button:visited, .post-filters select {
   box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.5); }
@@ -788,7 +788,7 @@ ul.hostingPlatforms {
       box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
       -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
       -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); }
-      ul.hostingPlatforms li a:hover {
+      ul.hostingPlatforms li a:hover, ul.hostingPlatforms li a:focus {
         opacity: 1;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
         -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
@@ -812,25 +812,35 @@ ul.hostingPlatforms {
           -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
           -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3); }
       ul.hostingPlatforms li a#soundcloud {
-        background-image: url("../img/icon-soundcloud.png"); }
+        background-image: url("../img/icon-soundcloud.png");
+        background-color: #ff5600; }
       ul.hostingPlatforms li a#pocketcasts {
-        background-image: url("../img/icon-pocketcasts.png"); }
+        background-image: url("../img/icon-pocketcasts.png");
+        background-color: #ff442e; }
       ul.hostingPlatforms li a#overcast {
-        background-image: url("../img/icon-overcast.png"); }
+        background-image: url("../img/icon-overcast.png");
+        background-color: #ff8a21; }
       ul.hostingPlatforms li a#anchor {
-        background-image: url("../img/icon-anchor.png"); }
+        background-image: url("../img/icon-anchor.png");
+        background-color: #8f36ff; }
       ul.hostingPlatforms li a#itunes {
-        background-image: url("../img/icon-itunes.png"); }
+        background-image: url("../img/icon-itunes.png");
+        background-color: #a840dd; }
       ul.hostingPlatforms li a#stitcher {
-        background-image: url("../img/icon-stitcher.png"); }
+        background-image: url("../img/icon-stitcher.png");
+        background-color: #fff; }
       ul.hostingPlatforms li a#spotify {
-        background-image: url("../img/icon-spotify.png"); }
+        background-image: url("../img/icon-spotify.png");
+        background-color: #00d95a; }
       ul.hostingPlatforms li a#tunein {
-        background-image: url("../img/icon-tunein.png"); }
+        background-image: url("../img/icon-tunein.png");
+        background-color: #00d9cd; }
       ul.hostingPlatforms li a#googlepodcasts {
-        background-image: url("../img/icon-google.png"); }
+        background-image: url("../img/icon-google.png");
+        background-color: #f8b82c; }
       ul.hostingPlatforms li a#googleplay {
-        background-image: url("../img/icon-googleplay.png"); }
+        background-image: url("../img/icon-googleplay.png");
+        background-color: #f85725; }
 
 .header .sixcol ul.hostingPlatforms {
   max-width: 500px; }
@@ -864,6 +874,9 @@ ul.hostingPlatforms {
   #latestEpisodeContainer a {
     color: #000;
     text-decoration: none; }
+    #latestEpisodeContainer a span {
+      padding-bottom: .5em;
+      display: inline-block; }
     #latestEpisodeContainer a:hover {
       opacity: .8; }
   #latestEpisodeContainer .prompt {
@@ -874,7 +887,7 @@ ul.hostingPlatforms {
     -ms-flex-item-align: center;
     align-self: center; }
     #latestEpisodeContainer .prompt div {
-      margin: 5px 0 0; }
+      padding: 5px 0 0; }
   #latestEpisodeContainer .actions {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1214,16 +1227,15 @@ POSTS & CONTENT STYLES
     display: block;
     text-decoration: none;
     color: #000 !important;
-    overflow: hidden; }
+    overflow: hidden;
+    line-height: 1.2; }
     .loop article.type-resources a h4 {
       font-size: 1rem;
       margin: 0 0 .1em;
       font-weight: 900;
-      display: inline;
-      line-height: 1.4; }
+      display: inline; }
     .loop article.type-resources a p {
       font-size: 1rem;
-      line-height: 1.4;
       display: inline;
       margin: 0; }
     .loop article.type-resources a:hover {
@@ -1849,7 +1861,7 @@ SUBSCRIBE PAGE
       font-weight: 300;
       -ms-flex-item-align: center;
       align-self: center; }
-    .subscribeLists a:hover {
+    .subscribeLists a:hover, .subscribeLists a:focus {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
       -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
@@ -3792,3 +3804,62 @@ Stylesheet: Print Stylesheet
   .respond-form,
   nav {
     display: none; } }
+
+/******************************************************************
+
+Stylesheet: Idea Push
+
+******************************************************************/
+body.guest-submissions-voting #latestEpisodeContainer {
+  display: none !important; }
+
+body.guest-submissions-voting main[role="main"] {
+  margin-top: 1%; }
+
+.page main[role="main"] .entry-content .ideapush-container {
+  padding: 80px 0 6%;
+  max-width: 99%;
+  margin: 0 auto;
+  background: white;
+  padding: 3%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); }
+  .page main[role="main"] .entry-content .ideapush-container img {
+    margin-bottom: 0; }
+  .page main[role="main"] .entry-content .ideapush-container a {
+    color: #000;
+    text-decoration: underline;
+    -webkit-text-decoration-color: #3bb0e0;
+    text-decoration-color: #3bb0e0; }
+  .page main[role="main"] .entry-content .ideapush-container .ideapush-idea-filter {
+    color: #666; }
+
+.single-idea .podcastEpisodeLinks, .single-idea .postDeets {
+  display: none; }
+
+.single-idea .titleWrap {
+  margin-bottom: 0; }
+
+.single-idea article {
+  margin: 0 auto;
+  width: 768px;
+  position: relative;
+  max-width: 92%;
+  background: white;
+  padding: 3%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); }
+  .single-idea article img {
+    margin-bottom: 0; }
+
+.idea-vote-container {
+  border-color: #f3f600; }
+
+.ideapush-container-idea-header {
+  border-bottom: 7px solid #67c2e7; }
+
+.ideapush-form-title {
+  font-weight: 900;
+  color: #125570; }

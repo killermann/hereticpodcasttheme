@@ -21,10 +21,8 @@
 				<h2 class="subtitle">An entry from the <a href="https://hereticpodcast.com/codex/" title="The Heretic Codex of Social Justice Dogma">Codex</a> of Social Justice Dogma</h2>
 				<?php }?>
 
-				<!-- /post title -->
-
 				<div class="podcastEpisodeLinks flexcontainer last">
-					<h4>View this episode on</h4>
+					<h4>Listen on</h4>
 					<!-- podcast links -->
 					<ul class="hostingPlatforms">
 						<?php if(get_field('itunes_link')) {
@@ -49,6 +47,39 @@
 								echo '" alt="Listen to Podcast on Spotify">Spotify</a></li>';
 							};
 						?>
+						<?php if(get_field('overcast_link')) {
+								echo '<li><a data-ot="Overcast" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="overcast" href="';
+								echo the_field('overcast_link');
+								echo '" alt="Listen to Podcast on Overcast">Overcast</a></li>';
+							}
+							elseif(get_field('overcast_link', 'option')) {
+								echo '<li><a data-ot="Overcast" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="overcast" href="';
+								echo the_field('overcast_link', 'option');
+								echo '" alt="Listen to Podcast on Overcast">Overcast</a></li>';
+							};
+						?>
+						<?php if(get_field('pocketcasts_link')) {
+								echo '<li><a data-ot="Pocket Casts" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="pocketcasts" href="';
+								echo the_field('pocketcasts_link');
+								echo '" alt="Listen to Podcast on Pocket Casts">Pocket Casts</a></li>';
+							}
+							elseif(get_field('pocketcasts_link', 'option')) {
+								echo '<li><a data-ot="Pocket Casts" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="pocketcasts" href="';
+								echo the_field('pocketcasts_link', 'option');
+								echo '" alt="Listen to Podcast on Pocket Casts">Pocket Casts</a></li>';
+							};
+						?>
+						<?php if(get_field('soundcloud_link')) {
+								echo '<li><a data-ot="Soundcloud" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="soundcloud" href="';
+								echo the_field('soundcloud_link');
+								echo '" alt="Listen to Podcast on Soundcloud">Soundcloud</a></li>';
+							}
+							elseif(get_field('soundcloud_link', 'option')) {
+								echo '<li><a data-ot="Soundcloud" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="soundcloud" href="';
+								echo the_field('soundcloud_link', 'option');
+								echo '" alt="Listen to Podcast on Soundcloud">Soundcloud</a></li>';
+							};
+						?>
 						<?php if(get_field('stitcher_link')) {
 								echo '<li><a data-ot="Stitcher" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="stitcher" href="';
 								echo the_field('stitcher_link');
@@ -71,6 +102,17 @@
 								echo '" alt="Listen to Podcast on TuneIn">TuneIn</a></li>';
 							};
 						?>
+						<?php if(get_field('google_podcasts_link')) {
+							echo '<li><a data-ot="Google Podcasts" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="googlepodcasts" href="';
+							echo the_field('google_podcasts_link');
+							echo '" alt="Listen to Podcast on Google Podcasts">Google Podcasts</a></li>';
+							}
+							elseif(get_field('google_podcasts_link', 'option')) {
+								echo '<li><a data-ot="Google Podcasts" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="googlepodcasts" href="';
+								echo the_field('google_podcasts_link', 'option');
+								echo '" alt="Listen to Podcast on Google Podcasts">Google Podcasts</a></li>';
+							};
+						?>
 						<?php if(get_field('google_play_link')) {
 							echo '<li><a data-ot="Google Play Music" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="googleplay" href="';
 							echo the_field('google_play_link');
@@ -85,8 +127,10 @@
 					</ul>
 				</div>
 
+				<!-- /post title -->
+
 				<?php if(get_field('podcast')) { ?>
-					<div class="podcast">
+					<div id="Listen" class="podcast">
 						<?php the_field('podcast');?>
 					</div>
 				<?php }
@@ -121,6 +165,112 @@
 				<div class="entry-content">
 					<?php the_content(); // Dynamic Content ?>
 				</div>
+
+				<footer class="podcastEpisodeLinks flexcontainer">
+					<h4>Listen to this episode on</h4>
+					<!-- podcast links -->
+					<ul class="hostingPlatforms">
+						<?php if(get_field('itunes_link')) {
+								echo '<li><a data-ot="iTunes" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="itunes" href="';
+								echo the_field('itunes_link');
+								echo '" alt="Listen to Podcast on iTunes">iTunes</a></li>';
+							}
+							elseif(get_field('itunes_link', 'option')) {
+								echo '<li><a data-ot="iTunes" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="itunes" href="';
+								echo the_field('itunes_link', 'option');
+								echo '" alt="Listen to Podcast on iTunes">iTunes</a></li>';
+							};
+						?>
+						<?php if(get_field('spotify_link')) {
+								echo '<li><a data-ot="Spotify" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="spotify" href="';
+								echo the_field('spotify_link');
+								echo '" alt="Listen to Podcast on Spotify">Spotify</a></li>';
+							}
+							elseif(get_field('spotify_link', 'option')) {
+								echo '<li><a data-ot="Spotify" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="spotify" href="';
+								echo the_field('spotify_link', 'option');
+								echo '" alt="Listen to Podcast on Spotify">Spotify</a></li>';
+							};
+						?>
+						<?php if(get_field('anchor_link')) {
+								echo '<li><a data-ot="Anchor" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="anchor" href="';
+								echo the_field('anchor_link');
+								echo '" alt="Listen to Podcast on Anchor">Anchor</a></li>';
+							}
+							elseif(get_field('anchor_link', 'option')) {
+								echo '<li><a data-ot="Anchor" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="anchor" href="';
+								echo the_field('anchor_link', 'option');
+								echo '" alt="Listen to Podcast on Anchor">Anchor</a></li>';
+							};
+						?>
+						<?php if(get_field('pocketcasts_link')) {
+								echo '<li><a data-ot="Pocket Casts" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="pocketcasts" href="';
+								echo the_field('pocketcasts_link');
+								echo '" alt="Listen to Podcast on Pocket Casts">Pocket Casts</a></li>';
+							}
+							elseif(get_field('pocketcasts_link', 'option')) {
+								echo '<li><a data-ot="Pocket Casts" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="pocketcasts" href="';
+								echo the_field('pocketcasts_link', 'option');
+								echo '" alt="Listen to Podcast on Pocket Casts">Pocket Casts</a></li>';
+							};
+						?>
+						<?php if(get_field('soundcloud_link')) {
+								echo '<li><a data-ot="Soundcloud" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="soundcloud" href="';
+								echo the_field('soundcloud_link');
+								echo '" alt="Listen to Podcast on Soundcloud">Soundcloud</a></li>';
+							}
+							elseif(get_field('soundcloud_link', 'option')) {
+								echo '<li><a data-ot="Soundcloud" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="soundcloud" href="';
+								echo the_field('soundcloud_link', 'option');
+								echo '" alt="Listen to Podcast on Soundcloud">Soundcloud</a></li>';
+							};
+						?>
+						<?php if(get_field('stitcher_link')) {
+								echo '<li><a data-ot="Stitcher" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="stitcher" href="';
+								echo the_field('stitcher_link');
+								echo '" alt="Listen to Podcast on Stitcher">Stitcher</a></li>';
+							}
+							elseif(get_field('stitcher_link', 'option')) {
+								echo '<li><a data-ot="Stitcher" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="stitcher" href="';
+								echo the_field('stitcher_link', 'option');
+								echo '" alt="Listen to Podcast on Stitcher">Stitcher</a></li>';
+							};
+						?>
+						<?php if(get_field('tunein_link')) {
+								echo '<li><a data-ot="TuneIn" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="tunein" href="';
+								echo the_field('tunein_link');
+								echo '" alt="Listen to Podcast on TuneIn">TuneIn</a></li>';
+							}
+							elseif(get_field('tunein_link', 'option')) {
+								echo '<li><a data-ot="TuneIn" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="tunein" href="';
+								echo the_field('tunein_link', 'option');
+								echo '" alt="Listen to Podcast on TuneIn">TuneIn</a></li>';
+							};
+						?>
+						<?php if(get_field('google_podcasts_link')) {
+							echo '<li><a data-ot="Google Podcasts" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="googlepodcasts" href="';
+							echo the_field('google_podcasts_link');
+							echo '" alt="Listen to Podcast on Google Podcasts">Google Podcasts</a></li>';
+							}
+							elseif(get_field('google_podcasts_link', 'option')) {
+								echo '<li><a data-ot="Google Podcasts" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="googlepodcasts" href="';
+								echo the_field('google_podcasts_link', 'option');
+								echo '" alt="Listen to Podcast on Google Podcasts">Google Podcasts</a></li>';
+							};
+						?>
+						<?php if(get_field('google_play_link')) {
+							echo '<li><a data-ot="Google Play Music" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="googleplay" href="';
+							echo the_field('google_play_link');
+							echo '" alt="Listen to Podcast on Google Play">Google Play</a></li>';
+							}
+							elseif(get_field('google_play_link', 'option')) {
+								echo '<li><a data-ot="Google Play Music" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true" id="googleplay" href="';
+								echo the_field('google_play_link', 'option');
+								echo '" alt="Listen to Podcast on Google Play">Google Play</a></li>';
+							};
+						?>
+					</ul>
+				</footer>
 
 			</article>
 			<!-- /article -->

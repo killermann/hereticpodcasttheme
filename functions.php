@@ -123,19 +123,19 @@ function getLatestEpisode() { ?>
 
 		<div class="prompt">
 			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-				Listen to the
+				<span>Listen to the</span>
 				<div style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/heading-latest-episode.svg'); width:228px; height:40px;" class="image-replacement">Latest Episode</div>
 			</a>
 		</div>
 		<div class="actions">
 
-			<a data-ot="Play Latest" data-ot-delay=".2" data-ot-tip-joint="bottom" data-ot-target-joint="top" data-ot-target="true" class="primary" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+			<a data-ot="Play Latest" data-ot-delay=".2" data-ot-tip-joint="bottom" data-ot-target-joint="top" data-ot-target="true" class="primary" href="<?php the_permalink() ?>/#Listen" rel="bookmark" title="<?php the_title_attribute(); ?>">
 				<img alt="Play Latest" rel="Play Latest" src="<?php echo get_template_directory_uri(); ?>/img/icon-play.svg"/ width="32" height="32">
 			</a>
 
-			<a data-ot="Download" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true"class="secondary" href="<?php echo the_field('podcast_download');?>" alt="Download this Episode">
+			<!-- <a data-ot="Download" data-ot-delay=".2" data-ot-tip-joint="top" data-ot-target-joint="bottom" data-ot-target="true"class="secondary" href="<?php echo the_field('podcast_download');?>" alt="Download this Episode">
 				<img alt="Download" rel="Download" src="<?php echo get_template_directory_uri(); ?>/img/icon-download.svg"/ width="32" height="32">
-			</a>
+			</a> -->
 
 			<?php endwhile; else: endif; wp_reset_query();
 		?>

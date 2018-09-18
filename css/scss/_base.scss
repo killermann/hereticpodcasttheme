@@ -381,12 +381,15 @@ NAVIGATION STYLES
 
 .toggle-button {
 	position: fixed;
+	display:block;
 	width: 36px;
 	height: 36px;
 	top:10px;
 	right:10px;
 	transition: .25s;
-	z-index: 15;
+	z-index: 99999;
+
+	svg path {transition:.5s;}
 
 	&:hover {
 		cursor:pointer;
@@ -394,7 +397,6 @@ NAVIGATION STYLES
 
 		svg {
 			fill:$yellow;
-			path {transition: .35s;}
 		}
 	}
 }
@@ -442,8 +444,6 @@ NAVIGATION STYLES
 
 		li {
 			margin:0;
-			padding:0;
-			line-height:1;
 			a {
 				width:28px;
 				height:28px;
@@ -458,15 +458,15 @@ NAVIGATION STYLES
 		margin:0;
 		padding:20px;
 		font-size:.9rem;
-		line-height:1.1;
+		line-height:1;
 
 		li {
 			display:inline-block;
-			margin-bottom:.5em;
+			margin-bottom:.75em;
 			padding:0;
-
 			a {
-				text-decoration-color:$light-blue;
+				text-decoration:none;
+
 				&:hover, &:active {
 					color:$yellow;
 				}

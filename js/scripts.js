@@ -1,11 +1,8 @@
 $(document).ready(function() {
 
 	var $toggleButton = $('.toggle-button'),
-    	$menuWrap = $('.mainNav-wrap'),
-    	$sidebarArrow = $('.sidebar-menu-arrow');
-		$bgClick = $('.mainNav-bg'),
-
-	// Hamburger button
+	$menuWrap = $('.mainNav-wrap'),
+	$bgClick = $('.mainNav-bg');
 
 	$toggleButton.on('click', function() {
 		$(this).toggleClass('button-open');
@@ -17,12 +14,6 @@ $(document).ready(function() {
 		$(this).toggleClass('bg-show');
 		$toggleButton.toggleClass('button-open');
 		$menuWrap.toggleClass('menu-show');
-	});
-
-	// Sidebar navigation arrows
-
-	$sidebarArrow.click(function() {
-		$(this).next().slideToggle(300);
 	});
 
 });

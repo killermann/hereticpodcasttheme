@@ -119,8 +119,6 @@ HEADER STYLES
 *********************/
 .home .header, .page .header, .archive .header{
 	background: #43a7da;
-	background: -moz-linear-gradient(-20deg, darken($primary-color,1%) 0%, darken($primary-color,20%) 100%);
-	background: -webkit-linear-gradient(-25deg, darken($primary-color,1%) 0%,darken($primary-color,20%) 100%);
 	background: linear-gradient(160deg, darken($primary-color,1%) 0%,darken($primary-color,20%) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='darken($link-color,1%)', endColorstr='darken($link-color,20%)',GradientType=1 );
 }
@@ -345,211 +343,136 @@ ul.hostingPlatforms {
 NAVIGATION STYLES
 *********************/
 
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
+.mainNav-wrap {
+	background: linear-gradient(160deg, darken($primary-color,1%) 0%,darken($primary-color,20%) 100%);
+	position: fixed;
+	top: 0;
+	right:0;
+	height: 100vh;
+	width: 320px;
+	margin-right: -320px;
+	font-size: 1em;
+	font-weight: 700;
+	overflow: auto;
+	transition: .35s;
+	z-index:9999;
+}
 
-#mainNav {
+.mainNav-bg {
 	display:none;
+}
+
+	.bg-show {
+		display:block;
+		z-index:9998;
+		width:100vw;
+		height:100vh;
+		background:rgba(0,52,68,.89);
+		position:fixed;
+		top:0;
+		left:0;
+		cursor:pointer;
+	}
+
+.menu-show {
+	margin-right: 0;
+	@extend .shadow-high;
+}
+
+.toggle-button {
+	position: fixed;
+	width: 36px;
+	height: 36px;
+	top:10px;
+	right:10px;
+	transition: .25s;
+	z-index: 15;
+
+	&:hover {
+		cursor:pointer;
+		transform:scale(1.2);
+
+		svg {
+			fill:$yellow;
+			path {transition: .35s;}
+		}
+	}
+}
+	.button-open {
+		cursor:pointer;
+		transform:scale(1.2);
+		svg {
+			fill:$yellow;
+			overflow:visible;
+
+			#menu-bar-1 {
+				transform:rotate(-120deg) translate(100%, 100%);
+			}
+			#menu-bar-2 {
+				transform:rotate(-130deg) translate(-110%, -20%);
+			}
+			#menu-bar-3 {
+				transform:rotate(-120deg) translate(100%, 100%);
+			}
+			#menu-bar-4 {
+				transform:rotate(-407deg) translate(-33%, -13%)
+			}
+		}
+	}
+#mainNav {
+	margin:0 10px;
+	position: relative;
+
+	.hereticNav {
+		flex-wrap:wrap;
+		padding:0;
+		justify-content:flex-start;
+		.icon {width:36px; height:36px;}
+
+		#join, #codex {display:flex !important;}
+
+		a div {display:none;}
+	}
+
+	.hostingPlatforms {
+		font-size:.7rem;
+		padding:20px;
+
+		span {display:block; width:100%;margin-bottom:1em;font-weight:400;}
+
+		li {
+			margin:0;
+			padding:0;
+			line-height:1;
+			a {
+				width:28px;
+				height:28px;
+				margin:0 3px 3px 0;
+			}
+		}
+
+	}
+
 	ul {
 		list-style: none;
 		margin:0;
-		padding:2px 4px;
+		padding:20px;
+		font-size:.9rem;
+		line-height:1.1;
 
 		li {
 			display:inline-block;
+			margin-bottom:.5em;
+			padding:0;
 
 			a {
-				text-decoration:none;
-				border-top:7px solid darken($primary-color,35%);
-				color:darken($primary-color,35%);
-				padding:7px 12px;
-				font-weight:900;
-				font-size:14px;
-
-				@include transition(all .2s ease-in-out);
-
+				text-decoration-color:$light-blue;
 				&:hover, &:active {
-					background:$accent-color;
+					color:$yellow;
 				}
 			}
 		}
 	}
-}
-
-#primaryNavContainer {
-	position:relative;
-	overflow:hidden;
-	padding:10px 3%;
-	text-align:center;
-	background:$grey;
-
-	.nav-toggle {
-	  -webkit-tap-highlight-color: rgba(0,0,0,0);
-	  -webkit-touch-callout: none;
-	  -webkit-user-select: none;
-	  -moz-user-select: none;
-	  -ms-user-select: none;
-	  -o-user-select: none;
-	  user-select: none;
-	  display:block;
-	  text-decoration:none;
-	  color:#fff;
-
-	  &:before {
-	  	display: inline-block;
-	  	margin-right:5px;
-	    font: normal normal normal 14px/1 FontAwesome;
-	    font-size: inherit;
-	    text-rendering: auto;
-	    -webkit-font-smoothing: antialiased;
-	    -moz-osx-font-smoothing: grayscale;
-	    content: "\f0c9";
-	  }
-
-	  &.active:before {
-	  	content: "\f00d";
-	  }
-	}
-
-	.nav-collapse {
-		border-bottom: 0;
-		@include transition(all .2s ease-in-out);
-
-		ul.top-nav{
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			display: block;
-			list-style: none;
-		}
-
-		li {
-	  		margin:0 0 5px;
-	  		border:1px solid lighten($grey,10%);
-	  		@include rounded(2px);
-
-			a {
-				display: block;
-				padding: 10px 12px;
-				color:darken($text-color,5%);
-				text-decoration:none;
-				font-weight:bold;
-				@include rounded(2px);
-
-				&:before {
-				}
-
-				/*
-				remember this is for mobile ONLY, so there's no need
-				to even declare hover styles here, you can do it in
-				the style.scss file where it's relevant. We want to
-				keep this file as small as possible!
-				*/
-				&:hover, &:focus {
-					text-decoration:underline;
-					color:darken($text-color,9%);
-					background:lighten($grey,5%);
-
-					&:before {
-						opacity:1;
-					}
-				}
-			}
-
-			&:first-child {}
-
-			&:last-child {}
-
-			/*
-			so you really have to rethink your dropdowns for mobile.
-			you don't want to have it expand too much because the
-			screen is so small. How you manage your menu should
-			depend on the project. Here's some great info on it:
-			http://www.alistapart.com/articles/organizing-mobile/
-			*/
-
-
-			ul.sub-menu,
-			ul.children {
-				margin:0;
-
-				li {
-					border:none;
-
-					a {
-						opacity:.7;
-						font-weight:400;
-
-						&:before {
-							display:none;
-							padding-right:7px;
-							font-family:FontAwesome;
-						    text-rendering: auto;
-						    -webkit-font-smoothing: antialiased;
-						    -moz-osx-font-smoothing: grayscale;
-							content: "";
-						}
-
-						&:hover,
-						&:focus {opacity:1;}
-
-						&:link {}
-
-					}
-
-					&:first-child {}
-
-					&:last-child {}
-
-				}
-
-			}
-
-		} /* end .menu li */
-
-		/* highlight current page */
-		li.current-menu-item,
-		li.current_page_item,
-		li.current-page-ancestor {
-
-			a:before {
-				display:inline-block;
-				padding-right:7px;
-				line-height:1;
-				font-family:FontAwesome;
-			    text-rendering: auto;
-			    -webkit-font-smoothing: antialiased;
-			    -moz-osx-font-smoothing: grayscale;
-				content: "\f08d";
-			}
-		}
-
-	} /* end .nav */
-
-
-
-	.nav-collapse {
-	  clip: rect(0 0 0 0);
-	  max-height: 0;
-	  position: absolute;
-	  display: block;
-	  overflow: hidden;
-	  zoom: 1;
-	}
-
-	.nav-collapse.opened {
-	  max-height: 9999px;
-	}
-
-}
-
-#sideNav {
-	display:none;
 }
 
 .hereticNav {
@@ -558,6 +481,7 @@ and more scalable.
     list-style: none;
 	flex-direction: row;
 	margin:3px;
+	padding:0 45px 0 0;
 
 	li {
 		a {
@@ -601,10 +525,6 @@ and more scalable.
 				.icon {
 					opacity:1;
 					fill:$accent-color;
-					-moz-transform: scale(1.2);
-					-webkit-transform: scale(1.2);
-					-o-transform: scale(1.2);
-					-ms-transform: scale(1.2);
 					transform: scale(1.2);
 				}
 			}
@@ -636,6 +556,10 @@ and more scalable.
 					&#join {
 						display:flex !important;
 					}
+
+					&#codex {
+						display:none !important;
+					}
 				}
 			}
 		}
@@ -652,6 +576,8 @@ POSTS & CONTENT STYLES
 *********************/
 
 .loop {
+	overflow:hidden;
+
 	article.post {
 		margin-bottom:2rem;
 
@@ -864,24 +790,19 @@ address {
 
 /* post meta */
 .postDeets {
-	padding:16px 20px 14px;
+	padding:1rem 1rem 0;
 	font-size:.7em;
+	text-align:center;
 	margin-bottom:7px;
 	z-index:0;
 	position:relative;
-	margin-top:-2px;
 	font-weight:600;
 	color:$primary-color;
-	border-left:7px solid $primary-color;
 
 	span {
 		padding:0 2px;
 	}
 }
-
-	.loop .postDeets {
-		padding:.6rem;
-	}
 
 .wp-caption {
 	max-width: 100%;
@@ -2172,9 +2093,7 @@ MODAL STYLES
 	  visibility: hidden;
 	  opacity: 0;
 	  transition: visibility 0s linear 0.3s, opacity 0.3s;
-	}
-
-
+  }
 }
 
 

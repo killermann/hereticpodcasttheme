@@ -148,7 +148,7 @@ function getLatestEpisode() { ?>
 function getHereticNav() {?>
 	<ul class="hereticNav">
 		<li>
-			<a id="subscribe" href="<?php echo home_url(); ?>/subscribe" alt="">
+			<a id="subscribe" href="<?php echo home_url(); ?>/subscribe" title="Subscribe to the Heretic Podcast">
 				<svg viewBox="0 0 100 100" class="icon">
 				  <use xlink:href="#subscribeIcon">
 				</svg>
@@ -159,7 +159,7 @@ function getHereticNav() {?>
 			</a>
 		</li>
 		<li>
-			<a id="about" href="<?php echo home_url(); ?>/about" alt="">
+			<a id="about" href="<?php echo home_url(); ?>/about" title="About the Heretic Podcast">
 				<svg viewBox="0 0 100 100" class="icon">
 				  <use xlink:href="#learnIcon">
 				</svg>
@@ -170,13 +170,24 @@ function getHereticNav() {?>
 			</a>
 		</li>
 		<li>
-			<a id="join" class="mobileHide" href="<?php echo home_url(); ?>/join" alt="">
+			<a id="join" class="mobileHide" href="<?php echo home_url(); ?>/join" title="Join and Support the Heretic Podcast">
 				<svg viewBox="0 0 100 100" class="icon">
 				  <use xlink:href="#joinIcon">
 				</svg>
 				<div>
 					Join
 					<span>become a heretic</span>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a id="codex" class="mobileHide" href="<?php echo home_url(); ?>/codex" title="The Codex of Social Justice Dogma Tenets">
+				<svg viewBox="0 0 100 100" class="icon">
+				  <use xlink:href="#codexIcon">
+				</svg>
+				<div>
+					Codex
+					<span>learn about the dogma</span>
 				</div>
 			</a>
 		</li>
@@ -348,8 +359,6 @@ function getLoopSubscribe() { ?>
 function getCommentsBox() {?>
 
 	<svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="768" height="800" viewBox="0 0 768 800"><defs><g id="icon-close"><path class="cls-1" d="M37.62.29c-1.06-1.06-2.68,1.05-3.35,1.64C33.5,1.74,32,3.32,31.88,3.42c4.84-4.71,1-3.41-2.18-.75C30.76.3,27,3.15,26.87,3.3c.71-.71,1.44-2.13-.4-1.77-.79.16-2.1,2.09-2.65,2.63C21.57,6.38,19.3,8.6,17,10.77c-2.85-3-5.65-6.13-8.7-8.95-2-1.89-5-2.62-2.47.74C2.21-1.09.88.08,4.89,4.21c-1.14.81.72,2.58,1,3,.05,1.92,4.7,6.84,5.93,8.47h0l-.17.16C10.57,14.68,1.92,4.46.76,5.63S9.21,15.72,10.42,17C7.19,20.17,3.5,23.66,1,27.42c-2.67,4,.89,1.83,2.77-.13-2.61,3.13-1.55,4.09,1.32,1.29s5.44-5.8,8.13-8.68c.1.11.2.22.31.32Q9,25.08,4.43,29.92C2.34,32.14,1.9,35.17,5,32a1,1,0,0,0,.19.22.69.69,0,0,0,0,.35.86.86,0,0,0-.1.32c-.67,1-2.94,3-3,4-.14,3.06,2.4.48,3.45-.53,4.05-3.9,7.88-8.09,11.75-12.17,3.31,3.5,6.57,7.05,9.92,10.5,2.91,3,4.91,2.22,1.81-1.25a14.37,14.37,0,0,0,2.54,1.11c.48.41,1.61,1.44,2.29.67,2.78.6,1.39-1.49-.68-2.13a27.53,27.53,0,0,0-2.31-2.4,1,1,0,0,0,.34.06c.55.52,2.38,1,2.3-.29,1.45,1.32,1.31-.86,1.29-1.3,0-1.07-2-2.29-2.7-3-2.79-2.92-5.63-5.79-8.47-8.66C25.11,15.88,39.38,2.06,37.62.29Z"/></svg>
-
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 	<section id="comments" class="fishbowl">
 		<a class="commentsModal-toggle" alt="Leave a Comment">
@@ -1486,14 +1495,14 @@ function html5blank_header_scripts()
     }
 }
 
-// Load HTML5 Blank conditional scripts
-function html5blank_conditional_scripts()
-{
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
-    }
+// Update jQuery Version
+
+function replace_core_jquery_version() {
+    wp_deregister_script( 'jquery' );
+    // Change the URL if you want to load a local copy of jQuery from your own server.
+    wp_register_script( 'jquery', "https://code.jquery.com/jquery-2.2.4.min.js", array(), '2.2.4' );
 }
+add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 
 // Load HTML5 Blank styles
 function html5blank_styles()

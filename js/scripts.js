@@ -1,14 +1,31 @@
-(function ($, root, undefined) {
+$(document).ready(function() {
 
-	$(function () {
+	var $toggleButton = $('.toggle-button'),
+    	$menuWrap = $('.mainNav-wrap'),
+    	$sidebarArrow = $('.sidebar-menu-arrow');
+		$bgClick = $('.mainNav-bg'),
 
-		'use strict';
+	// Hamburger button
 
-		// DOM ready, take it away
-
+	$toggleButton.on('click', function() {
+		$(this).toggleClass('button-open');
+		$menuWrap.toggleClass('menu-show');
+		$bgClick.toggleClass('bg-show');
 	});
 
-})(jQuery, this);
+	$bgClick.on('click', function() {
+		$(this).toggleClass('bg-show');
+		$toggleButton.toggleClass('button-open');
+		$menuWrap.toggleClass('menu-show');
+	});
+
+	// Sidebar navigation arrows
+
+	$sidebarArrow.click(function() {
+		$(this).next().slideToggle(300);
+	});
+
+});
 
 // Opentip v2.4.6
 // Copyright (c) 2009-2012

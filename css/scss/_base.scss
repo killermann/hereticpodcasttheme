@@ -364,10 +364,11 @@ NAVIGATION STYLES
 
 	.bg-show {
 		display:block;
+		backdrop-filter: blur(5px);
 		z-index:9998;
 		width:100vw;
 		height:100vh;
-		background:rgba(0,52,68,.89);
+		background:rgba(0,52,68,.79);
 		position:fixed;
 		top:0;
 		left:0;
@@ -421,6 +422,7 @@ NAVIGATION STYLES
 			}
 		}
 	}
+
 #mainNav {
 	margin:0 10px;
 	position: relative;
@@ -456,14 +458,28 @@ NAVIGATION STYLES
 	ul {
 		list-style: none;
 		margin:0;
-		padding:20px;
-		font-size:.9rem;
+		padding:.4em;
 		line-height:1;
 
 		li {
 			display:inline-block;
 			margin-bottom:.75em;
 			padding:0;
+
+			a:not( [href*='hereticpodcast.com'] ):not( [href^='#'] ):not( [href^='/'] ):after {
+				content:'';
+				position:absolute;
+				display:inline-block;
+				color:inherit;
+				fill:inherit;
+				width:.8em;
+				height:.8em;
+				margin-left:.15em;
+				vertical-align:top;
+				background-repeat:no-repeat;
+				background-image:url(../img/icon-external-link.svg);
+			}
+
 			a {
 				text-decoration:none;
 
@@ -1075,9 +1091,6 @@ PAGE STYLES
 .page, .archive {
 	.inpageSearch {display:none;}
 
-	.header {
-	}
-
 	main[role="main"] {
 		margin-top:75px;
 
@@ -1141,49 +1154,56 @@ PAGE STYLES
 
 		}
 	}
+}
 
-	.pageTitleWrap {
-		margin:4%;
-		text-align:left;
+.pageTitleWrap {
+	margin:4%;
+	text-align:left;
 
-		.hasExcerpt {
-			margin:2rem auto .2rem;
-			h1 {
-				margin:0;
-			}
-
-			h2 {
-				margin:0;
-				font-size:1.2em;
-				opacity:.6;
-			}
-		}
+	.hasExcerpt {
+		margin:2rem auto .2rem;
 
 		h1 {
-			margin:2rem 0 .2rem;
-			font-weight:900;
-			opacity:.7;
-		}
-
-		#breadcrumbs {
-			margin-bottom:2rem;
-		}
-	}
-
-
-	.pageIntro p {
-		color:#888;
-		line-height:1.2;
-
-		&:first-of-type p {
 			margin:0;
 		}
+
+		.subtitle {
+			margin:8px 0 0;
+			font-size:1.2em;
+			line-height:1.2;
+			opacity:.7;
+			p {margin:1.5em 0 0;}
+			p:first-of-type {margin-top:0;}
+
+			a {text-decoration-color:$yellow;}
+
+			a:hover {color:$yellow;}
+		}
 	}
 
-	#links {
-		margin-top:0;
+	h1 {
+		margin:2rem 0 .2rem;
+		font-weight:900;
+		opacity:.7;
 	}
 
+	#breadcrumbs {
+		margin-bottom:2rem;
+	}
+}
+
+
+.pageIntro p {
+	color:#888;
+	line-height:1.2;
+
+	&:first-of-type p {
+		margin:0;
+	}
+}
+
+#links {
+	margin-top:0;
 }
 
 #breadcrumbs{
@@ -1828,13 +1848,7 @@ RESOURCES PAGE
 /******************************************************************
 ARCHIVE STYLES
 ******************************************************************/
-.archive {
-	.pageTitleWrap {
-	 	h1 {
-			margin-top:0;
-		}
-	}
-}
+
 .author {
 
 	main[role="main"] {

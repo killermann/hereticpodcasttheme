@@ -4,15 +4,6 @@ Stylesheet: Super Large Monitor Stylesheet
 
 ******************************************************************/
 
-
-/*********************
-NAVIGATION STYLES
-*********************/
-
-/**********************
-HEADER STYLES
-**********************/
-
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -25,7 +16,6 @@ LAYOUT & GRID STYLES
 	margin-left:4%;
 	max-width:100%;
 }
-
 
 #hereticNavHome .hereticNav{
 	li a{
@@ -45,14 +35,12 @@ LAYOUT & GRID STYLES
 
 }
 
-.page {
-	.pageTitleWrap {
-		margin:0;
+.pageTitleWrap {
+	margin:0;
 
-		.hasExcerpt {
-			margin: 2.5rem auto;
-			width:720px;
-		}
+	.hasExcerpt {
+		margin: 2.5rem auto;
+		width:720px;
 	}
 }
 

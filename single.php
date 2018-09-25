@@ -330,7 +330,7 @@
 
 			endif; };?>
 		</div>
-		<div class="sixcol clearfix first">
+		<div id="respond" class="sixcol clearfix first">
 			<?php getCommentsBox();?>
 		</div>
 

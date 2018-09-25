@@ -79,7 +79,7 @@ get_header(); ?>
 			</section>
 		</div>
 
-		<div id="blogHost" role="sidebar" class="wrap">
+		<div role="sidebar" class="hiImSam wrap">
 			<a href="https://hereticpodcast.com/about/about-the-host/" alt="About the host, Sam Killermann">
 	            <img src="<?php echo get_template_directory_uri(); ?>/img/hi-im-sam-bottom-shadow.png" alt="Meet Sam Killermann">
 	        </a>
@@ -95,6 +95,11 @@ get_header(); ?>
 	            <li>
 	                <a target="_blank" href="http://m.me/hereticpodcast" alt="Write a Facebook Message to Heretic">
 	                    Message me.
+	                </a>
+	            </li>
+				<li>
+	                <a target="_blank" href="https://hereticpodcast.com/guest-submissions-voting/" title="Nominate or Vote on a Guest for the Podcast">
+	                    Nominate a guest.
 	                </a>
 	            </li>
 	        </ul>

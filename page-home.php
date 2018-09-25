@@ -5,7 +5,7 @@ Template Name: Home
 
  get_header(); ?>
 
-    <div id="homeSam" class="mobileHide">
+    <div id="homeSam" class="mobileHide hiImSam">
         <a href="https://hereticpodcast.com/about/about-the-host/" alt="About the host, Sam Killermann">
             <img src="<?php echo get_template_directory_uri(); ?>/img/hi-im-sam-bottom-shadow.png" alt="Meet Sam Killermann">
         </a>
